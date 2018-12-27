@@ -6,11 +6,15 @@ const CONSTANT_NOTIFICATION = 'MobileFlashcards:notifications';
 function notificationData(title, body) {
   return {
     title: title ? title : 'Reminder to look at flashcards',
-    body: body
-      ? body
-      : "Don't forget to study today!",
+    body: body ? body : "Don't forget to study today!",
     ios: {
       sound: true,
+    },
+    android: {
+      sound: true,
+      priority: 'high',
+      sticky: false,
+      vibrate: true,
     },
   };
 }

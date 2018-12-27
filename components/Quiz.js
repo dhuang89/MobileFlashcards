@@ -100,6 +100,11 @@ export default class Quiz extends Component {
     }));
   };
 
+  // calculate score and display it to user
+  // allow user to retake quiz or go back to deck view
+  // if answer is shown, show different views containing two new buttons 
+  // show the right answer and allows the user to mark whether they got the question right or wrong
+  
   render() {
     const {
       deck,
@@ -113,8 +118,7 @@ export default class Quiz extends Component {
       deck && currentQuestion
         ? `${currentQuestion.position + 1}/${deck.cardCount}`
         : '';
-  // calculate score and display it to user
-  // allow user to retake quiz or go back to deck view
+  
     return endReached ? (
       <View style={{ padding: 20, backgroundColor: 'white', flex: 1 }}>
         <Text style={{ fontSize: 48, textAlign: 'center', color: 'blue' }}>
@@ -160,8 +164,7 @@ export default class Quiz extends Component {
             {currentQuestion && currentQuestion.answer}
           </Text>
         </View>
-        // if answer is shown, show these views // shows the right answer and
-        allows the user to mark whether they got the question right or wrong
+      
         {answerShown ? (
           <View>
             <TouchableOpacity
